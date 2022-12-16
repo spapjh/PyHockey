@@ -11,4 +11,4 @@ An extremely simple python-based hockey game. This was created to practice else/
 
 ![Screenshot4](images/Screenshot4.png)
 
-![Screenshot2](images/Screenshot2.png)
+![Screenshot5](images/Screenshot5.png)
