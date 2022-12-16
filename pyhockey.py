@@ -10,7 +10,7 @@ team_b_names = ["Seattle WinterHawks", "Austin Cowboys", "Montreal Lumberjacks",
 team_b = random.choice(team_b_names)
 
 # Introduce Team B
-print(f"Team B: {team_b}")
+print(f"Opposition: {team_b}")
 
 # Initialize scores
 score_a = 0
