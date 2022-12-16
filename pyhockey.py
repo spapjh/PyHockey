@@ -1,6 +1,18 @@
 import random
 
-# Team A name
+print("""\
+
+                    ._.                 .__                   __                 
+ | | ______ ___.__.|  |__   ____   ____ |  | __ ____ ___.__. | | 
+ |_| \____ <   |  ||  |  \ /  _ \_/ ___\|  |/ // __ <   |  | |_| 
+ |-| |  |_> >___  ||   Y  (  <_> )  \___|    <\  ___/\___  | |-| 
+ | | |   __// ____||___|  /\____/ \___  >__|_ \\___  > ____| | | 
+ |_| |__|   \/          \/            \/     \/    \/\/      |_|
+ Welcome to PyHockey! An incredibly simple hockey game developed by @spapjh
+
+                    """)
+
+# Team A name (user input)
 team_a = input("Enter the name for your team (city and mascot): ")
 
 # Pool of names for Team B
@@ -10,7 +22,27 @@ team_b_names = ["Seattle WinterHawks", "Austin Cowboys", "Montreal Lumberjacks",
 team_b = random.choice(team_b_names)
 
 # Introduce Team B
-print(f"Opposition: {team_b}")
+print(f"Today's Game will see {team_a} face {team_b}")
+
+
+# Roster for Users Team
+team_a_roster = "G - Connor Russell\nD - Pedro Hernandez\nD - Cameron Ethington\nLW - Neil Cushard\nC - Zac Wojcik\nRW - Kelly Kolanos"
+
+# Roster for Team B (Seattle WinterHawks)
+team_b_roster_seattle = ["G - Mike Thompson", "D - Linden Smith", "D - James Rodriguez", "LW - Sam Williams", "C - Jack Anderson", "RW - Johannes Van Der Berg"]
+
+# Roster for Team B (Austin Cowboys)
+team_b_roster_austin = ["G - Kriztian Vadjuk", "D - Emilian Sorensen", "D - Jason Smith", "LW - Emmanuel Rodriguez", "C - Gary Thompson", "RW - Jay Deveraux"]
+
+# Roster for Team B (Montreal Lumberjacks)
+team_b_roster_montreal = ["G - Juri Polakampaluu", "D - Valteri Kananen", "D - Mark Thompson", "LW - Juul Katinen", "C - George Smithy", "RW - Jean D'Abonnette"]
+
+# Roster for Team B (Toronto Lakers)
+team_b_roster_toronto = "G - Jasper Raikkonen\nD - Oscar Enlund\nD - Eric Salomonson\nLW - Viktor Vorobev\nC - Bobby O'Connor\nRW - Enio Aalavara"
+
+# Display starting lineups
+print(f"Starting Lineup for {team_a}:\n {team_a_roster}")
+print(f"And this will be the line up for the visitor's team\n {team_b_roster_toronto}")
 
 # Initialize scores
 score_a = 0
@@ -22,17 +54,17 @@ game_over = False
 # Number of periods in the game
 periods = 3
 
-# Main game loop
+# Main game loop, a while loop that takes place while game is NOT over
 while not game_over:
-    # Check if all periods have been played
+    # Check if all periods have been played, if so, game over equals True
     if periods == 0:
         game_over = True
         break
 
-    # Introduce the beginning of a period
+    # Introduce the beginning of the period
     print(f"Period {3 - periods + 1} is about to begin!")
 
-    # Prompt the user to continue the game (so that it is not all shown at once! :) )
+    # Prompt the user to continue the game
     continue_game = input("Do you want to continue the game (Y/N)? ")
     if continue_game.lower() != "y":
         game_over = True
@@ -41,7 +73,7 @@ while not game_over:
     # One period has been played
     periods -= 1
 
-    # Number of plays in this period (min 3 max 8, so that score does not go out of control)
+    # Number of plays in this period
     plays = random.randint(3, 8)
 
     # Play the game
