@@ -1,7 +1,7 @@
 import random
+import time
 
 print("""\
-
                     ._.                 .__                   __                 
  | | ______ ___.__.|  |__   ____   ____ |  | __ ____ ___.__. | | 
  |_| \____ <   |  ||  |  \ /  _ \_/ ___\|  |/ // __ <   |  | |_| 
@@ -9,8 +9,25 @@ print("""\
  | | |   __// ____||___|  /\____/ \___  >__|_ \\___  > ____| | | 
  |_| |__|   \/          \/            \/     \/    \/\/      |_|
  Welcome to PyHockey! An incredibly simple hockey game developed by @spapjh
-
                     """)
+
+
+# Roster for Users Team
+team_a_roster = "G - Connor Russell\nD - Pedro Hernandez\nD - Cameron Ethington\nLW - Neil Cushard\nC - Zac Wojcik\nRW - Kelly Kolanos"
+
+
+# Roster for Team B (Seattle WinterHawks)
+team_b_roster_seattle = "G - Mike Thompson\nD - Linden Smith\nD - James Rodriguez\nLW - Sam Williams\nC - Jack Anderson\nRW - Johannes Van Der Berg"
+
+# Roster for Team B (Austin Cowboys)
+team_b_roster_austin = "G - Kriztian Vadjuk\nD - Emilian Sorensen\nD - Jason Smith\nLW - Emmanuel Rodriguez\nC - Gary Thompson\nRW - Jay Deveraux"
+
+# Roster for Team B (Montreal Lumberjacks)
+team_b_roster_montreal = "G - Juri Polakampaluu\nD - Valteri Kananen\nD - Mark Thompson\nLW - Juul Katinen\nC - George Smithy\nRW - Jean D'Abonnette"
+
+# Roster for Team B (Toronto Lakers)
+team_b_roster_toronto = "G - Jasper Raikkonen\nD - Oscar Enlund\nD - Eric Salomonson\nLW - Viktor Vorobev\nC - Bobby Sarich\nRW - Enio Aalavara"
+
 
 # Team A name (user input)
 team_a = input("Enter the name for your team (city and mascot): ")
@@ -18,31 +35,27 @@ team_a = input("Enter the name for your team (city and mascot): ")
 # Pool of names for Team B
 team_b_names = ["Seattle WinterHawks", "Austin Cowboys", "Montreal Lumberjacks", "Toronto Lakers"]
 
-# Choose a random name for Team B
+# Choose a Team B as a random choice from team_b_names pool, then creating an if loop to choose the right roster from that randomly selected team
 team_b = random.choice(team_b_names)
+if team_b == "Seattle WinterHawks":
+    team_b_roster = team_b_roster_seattle
+elif team_b == "Montreal Lumberjacks":
+    team_b_roster = team_b_roster_montreal
+elif team_b == "Austin Cowboys":
+    team_b_roster = team_b_roster_austin
+else: team_b_roster = team_b_roster_toronto
 
-# Introduce Team B
-print(f"Today's Game will see {team_a} face {team_b}")
+
+# Introduce the game Team B
+print(f"Today's Game will see {team_a} face the {team_b}")
 
 
-# Roster for Users Team
-team_a_roster = "G - Connor Russell\nD - Pedro Hernandez\nD - Cameron Ethington\nLW - Neil Cushard\nC - Zac Wojcik\nRW - Kelly Kolanos"
-
-# Roster for Team B (Seattle WinterHawks)
-team_b_roster_seattle = ["G - Mike Thompson", "D - Linden Smith", "D - James Rodriguez", "LW - Sam Williams", "C - Jack Anderson", "RW - Johannes Van Der Berg"]
-
-# Roster for Team B (Austin Cowboys)
-team_b_roster_austin = ["G - Kriztian Vadjuk", "D - Emilian Sorensen", "D - Jason Smith", "LW - Emmanuel Rodriguez", "C - Gary Thompson", "RW - Jay Deveraux"]
-
-# Roster for Team B (Montreal Lumberjacks)
-team_b_roster_montreal = ["G - Juri Polakampaluu", "D - Valteri Kananen", "D - Mark Thompson", "LW - Juul Katinen", "C - George Smithy", "RW - Jean D'Abonnette"]
-
-# Roster for Team B (Toronto Lakers)
-team_b_roster_toronto = "G - Jasper Raikkonen\nD - Oscar Enlund\nD - Eric Salomonson\nLW - Viktor Vorobev\nC - Bobby O'Connor\nRW - Enio Aalavara"
-
-# Display starting lineups
+# Display starting lineups, sleep time definition for line ups
+sleep_time2=1
+time.sleep(sleep_time2)
 print(f"Starting Lineup for {team_a}:\n {team_a_roster}")
-print(f"And this will be the line up for the visitor's team\n {team_b_roster_toronto}")
+time.sleep(sleep_time2)
+print(f"And this will be the line up for the visitor's team\n {team_b_roster}")
 
 # Initialize scores
 score_a = 0
@@ -50,6 +63,9 @@ score_b = 0
 
 # Flag to indicate if the game is over
 game_over = False
+
+# Sleep Time definition for game progress
+sleep_time=2
 
 # Number of periods in the game
 periods = 3
@@ -79,6 +95,7 @@ while not game_over:
     # Play the game
     while plays > 0:
         # Choose a random number between 0 and 1 to represent the outcome of the play
+        time.sleep(sleep_time)
         outcome = random.random()
 
         # If the outcome is less than 0.2, Team A scores a goal
@@ -113,7 +130,7 @@ while not game_over:
 
             print(f"{save_type} for {defending_team}!")
 
-        # Print the current score
+        # Print the current scoreH
         print(f"Current score: {team_a} {score_a} - {team_b} {score_b}")
 
         # Decrement the number of plays
