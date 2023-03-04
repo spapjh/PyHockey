@@ -70,6 +70,9 @@ sleep_time=2
 # Number of periods in the game
 periods = 3
 
+#Sleep Time
+sleep_time=2
+
 # Main game loop, a while loop that takes place while game is NOT over
 while not game_over:
     # Check if all periods have been played, if so, game over equals True
@@ -94,6 +97,7 @@ while not game_over:
 
     # Play the game
     while plays > 0:
+        time.sleep(sleep_time)
         # Choose a random number between 0 and 1 to represent the outcome of the play
         time.sleep(sleep_time)
         outcome = random.random()
