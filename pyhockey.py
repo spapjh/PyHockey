@@ -147,4 +147,48 @@ if score_a > score_b:
 elif score_b > score_a:
     print(f"{team_b} wins the game!")
 else:
-    print("The game is a tie!")
+    print("The game is a tie and we are headed to the shootout!")
+    # initializing shootout scores and shots
+    team1_shootout_score = 0
+    team2_shootout_score = 0
+    team1_shots = 0
+    team2_shots = 0
+    while team1_shots < 3 and team2_shots < 3:
+        # simulate a penalty shot for Team A
+        team1_shot = random.randint(0, 1)
+        if team1_shot == 0:
+            print("{team_a} missed the shot!")
+        else:
+            print("{team_a} scored!")
+            team1_shootout_score += 1
+
+        # simulate a penalty shot for Team B
+        team2_shot = random.randint(0, 1)
+        if team2_shot == 0:
+            print("{team_b} missed the shot!")
+        else:
+            print("{team_b} scored!")
+            team2_shootout_score += 1
+
+        team1_shots += 1
+        team2_shots += 1
+
+    # sudden death round
+    while team1_shootout_score == team2_shootout_score:
+        # simulate a penalty shot for team 1
+        team1_shot = random.randint(0, 1)
+        if team1_shot == 0:
+            print("Team 1 missed the shot!")
+        else:
+            print("Team 1 scored!")
+            team1_shootout_score += 1
+
+        # simulate a penalty shot for team 2
+        team2_shot = random.randint(0, 1)
+        if team2_shot == 0:
+            print("Team 2 missed the shot!")
+        else:
+            print("Team 2 scored!")
+            team2_shootout_score += 1
+
+    print("That's the end! After the shootout, the final score is {team_a}}:", team1_shootout_score, "- {team_b}", team2_shootout_score)
