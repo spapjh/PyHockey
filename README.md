@@ -18,5 +18,5 @@ An extremely simple python-based hockey game. This was created to practice else/
 
 Things that would be cool to add:
   - [ X ] Different roster/line up per opponent.
-  - [  ] Penalty shootout if tied at the end of 3 periods.
+  - [ X ] Penalty shootout if tied at the end of 3 periods.
   - [  ] League system that would also display the league table after every game
